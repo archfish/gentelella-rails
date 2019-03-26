@@ -31,6 +31,4 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "switchery-rails"
   s.add_runtime_dependency "select2-rails"
   s.add_runtime_dependency "parsley-rails"
-
-  s.add_development_dependency "sqlite3"
 end

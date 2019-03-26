@@ -11,6 +11,8 @@ namespace :bower do
   task :update do
     puts `bower install gentelella --save`
     puts `bower install DateJS --save`
+    puts `bower install chart.js --save`
+    puts `bower install fullcalendar@3.9 --save`
   end
 
   desc "vendors javascripts and stylesheets for rails assets pipeline"
@@ -32,7 +34,10 @@ namespace :bower do
     Dir.glob("bower_components/gentelella/vendors/google-code-prettify/src/*.js"){ |fn| cp_asset fn, "prettify" }
     Dir.glob("bower_components/gentelella/vendors/google-code-prettify/src/*.css"){ |fn| cp_asset fn, "prettify" }
 
-    Dir.glob("bower_components/DateJS/build/*.js"){ |fn| cp_asset fn, "date" }
+    # Dir.glob("bower_components/DateJS/build/*.js"){ |fn| cp_asset fn, "date" }
+    cp_asset "bower_components/DateJS/build/date-zh-CN.js", 'date'
+    cp_asset "bower_components/DateJS/build/date-en-US.js", 'date'
+    cp_asset "bower_components/DateJS/build/date.js", 'date', 'core.js'
     # rename vendors/javascripts/date/date.js to date/core.js
 
     cp_asset "bower_components/gentelella/vendors/starrr/dist/starrr.css"
@@ -73,7 +78,7 @@ namespace :bower do
 
     cp_asset "bower_components/gentelella/vendors/jszip/dist/jszip.js"
 
-    cp_asset "bower_components/gentelella/vendors/pdfmake/build/pdfmake.js"
+    # cp_asset "bower_components/gentelella/vendors/pdfmake/build/pdfmake.js"
     cp_asset "bower_components/gentelella/vendors/pdfmake/build/vfs_fonts.js"
 
     cp_asset "bower_components/gentelella/vendors/pnotify/dist/pnotify.js"
@@ -89,7 +94,7 @@ namespace :bower do
     cp_asset "bower_components/moment/min/moment-with-locales.js"
 
     cp_asset "bower_components/chart.js/dist/Chart.js"
-    
+
     cp_asset "bower_components/gentelella/vendors/raphael/raphael.js"
     cp_asset "bower_components/gentelella/vendors/morris.js/morris.js"
     cp_asset "bower_components/gentelella/vendors/morris.js/morris.css"
