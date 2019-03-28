@@ -36,7 +36,6 @@ namespace :bower do
 
     # Dir.glob("bower_components/DateJS/build/*.js"){ |fn| cp_asset fn, "date" }
     cp_asset "bower_components/DateJS/build/date-zh-CN.js", 'date'
-    cp_asset "bower_components/DateJS/build/date-en-US.js", 'date'
     cp_asset "bower_components/DateJS/build/date.js", 'date', 'core.js'
     # rename vendors/javascripts/date/date.js to date/core.js
 
